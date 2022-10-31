@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="countries"
+            type="hasan.gurgur.countries.model.Data" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen50"
+        android:layout_marginLeft="@dimen/dimen20"
+        android:layout_marginTop="@dimen/dimen15"
+        android:layout_marginRight="@dimen/dimen20"
+        android:background="@drawable/item_country_list_background"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/countryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dimen20"
+            android:layout_weight="1"
+            android:fontFamily="@font/amiko"
+            android:text="@{countries.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimens20"
+            tools:text="Turkey" />
+
+
+        <ImageView
+            android:id="@+id/save_icon"
+            android:layout_width="@dimen/dimen40"
+            android:layout_height="@dimen/dimen40"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/dimens20"
+            android:background="@{countries.clickedFavItem ? @drawable/ic_star_selected : @drawable/ic_star}" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="hasan.gurgur.countries.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/savedCountriesFragment"
+        android:name="hasan.gurgur.countries.ui.saved.SavedCountriesFragment"
+        android:label="fragment_saved_countries"
+        tools:layout="@layout/fragment_saved_countries" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="hasan.gurgur.countries.ui.home.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="detailCountry"
+            app:argType="hasan.gurgur.countries.model.Data" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_detailFragment"
+        app:destination="@id/detailFragment" />
+</navigation>
